@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000')
+        no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.page {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.menu-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 60px auto;
+    color: #333; 
+}
+
+.topbar {
+    background: rgba(0,0,0,0.85);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.nav-home {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.home-card {
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 120px auto;
+    max-width: 600px;
+}
+.home-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.home-desc {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+.btn {
+    background: #f1c40f; 
+    color: #000; 
+    padding: 12px 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 25px; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.food-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #000;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.img-wrap {
+    height: 200px;
+}
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+.card-footer .btn {
+    width: auto;
+    padding: 8px 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+}
+
+.receipt-card {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Courier New', Courier, monospace; 
+    border-top: 5px dashed #ccc;
+    border-bottom: 5px dashed #ccc;
+    color: #333;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.receipt-header h2 { margin: 0; color: #333; }
+
+.receipt-details {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.receipt-details span {
+    float: right;
+    font-weight: bold;
+}
+
+.receipt-total {
+    border-top: 1px dashed #999;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@media print {
+    body { background: white; padding: 0; display: block; }
+    .no-print { display: none !important; }
+    .receipt-card { box-shadow: none; border: none; margin: 0; padding: 0; }
+}
