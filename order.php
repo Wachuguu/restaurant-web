@@ -18,7 +18,7 @@
 <?php
 $menu = [
 "Hummus & Pita","Beef Samosas","Hot Wings","Fattouche Salad","Grilled Calamari",
-"Ribeye Steak","Fillet Steak","Lamb Chops","Mbuzi Kauka","Pork Ribs",
+"Ribeye Steak","Fillet Steak","Lamb Chops","pasta","Pork Ribs",
 "Grilled Tilapia","Prawn Curry","Grilled Chicken","Mombasa Lobster",
 "Neapolitan Pizza","Chicken Biryani","Chocolate Waffle","Grilled Pineapple",
 "Passion Mocktail","Long Island"
