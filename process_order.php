@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $total = $prices[$food] * $quantity;
 
-    $stmt = $conn->prepare("INSERT INTO orders (name, food, quantity, total_price, payment_method) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssiss", $name, $food, $quantity, $total, $payment);
+    $stmt = $conn->prepare("INSERT INTO orders (customer_name, food, quantity, total_price, payment_method) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssd", $customer_name, $food, $quantity, $total, $payment);
 
     if (!$stmt->execute()) {
         die($errHeader . "<div class='error-box'><h2>Database error</h2><p>" . htmlspecialchars($stmt->error) . "</p><a href='menu.php' class='btn dark'>Go Back</a></div>" . $errFooter);
