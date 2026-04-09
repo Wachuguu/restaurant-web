@@ -15,11 +15,16 @@ body {
     color: #fff;
 }
 
+
 .page {
     width: 95%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px 20px 80px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .menu-container {
@@ -89,6 +94,11 @@ body {
     color: #000;
 }
 
+.btn.dark {
+    background: #333;
+    color: #fff;
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -137,12 +147,10 @@ body {
     font-size: 1.1rem;
 }
 
-
 .card-footer .btn {
     width: auto;
     padding: 8px 20px;
 }
-
 input, select {
     width: 100%;
     padding: 12px;
@@ -153,17 +161,18 @@ input, select {
     color: #333;
 }
 
+/* --- FIXED RECEIPT CARD STYLES --- */
 .receipt-card {
     background: white;
     padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Stronger shadow to pop against dark background */
     max-width: 400px;
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
     font-family: 'Courier New', Courier, monospace; 
-    border-top: 5px dashed #ccc;
-    border-bottom: 5px dashed #ccc;
+    border-top: 6px dashed #ccc;
+    border-bottom: 6px dashed #ccc;
     color: #333;
 }
 
@@ -171,61 +180,111 @@ input, select {
     text-align: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .receipt-header h2 { margin: 0; color: #333; }
+.receipt-header p { margin: 5px 0 0; color: #666; }
 
 .receipt-details {
     margin-bottom: 20px;
     line-height: 1.8;
 }
 
-.receipt-details span {
-    float: right;
-    font-weight: bold;
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #333;
 }
-
+.receipt-row span:last-child {
+    font-weight: bold;
+    text-align: right;
+}
 .receipt-total {
-    border-top: 1px dashed #999;
+    border-top: 2px dashed #999;
+    margin-top: 15px;
     padding-top: 10px;
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.mpesa-box {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #333;
+    border: 1px solid #ddd;
+}
+.actions {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card {
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .half {
+    flex: 1;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+
+input:focus, select:focus {
+    border-color: #f1c40f; 
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(241, 196, 15, 0.4);
+}
+
+
+.btn-submit {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
 }
 
 @media print {
     body { background: white; padding: 0; display: block; }
+    .page { display: block; min-height: auto; padding: 0; }
     .no-print { display: none !important; }
-    .receipt-card { box-shadow: none; border: none; margin: 0; padding: 0; }
-}
-/* RECEIPT ROW FIX */
-.receipt-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-/* VALUE TEXT */
-.receipt-val {
-    font-weight: bold;
-}
-
-/* MPESA BOX */
-.mpesa-box {
-    background: #f8f9fa;
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-    margin: 20px 0;
-    border-radius: 5px;
-    color: #333;
-}
-.actions {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.btn.dark {
-    background: #333;
-    color: white;
+    .receipt-card { box-shadow: none; border: none; margin: 0; padding: 0; max-width: 100%; }
 }
