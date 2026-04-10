@@ -15,7 +15,7 @@
             <p>Complete your details below</p>
         </div>
 
-        <form method="POST" action="process_order.php">
+        <form method="POST" action="process_order.php" id="orderForm">
 
             <div class="form-group">
                 <label for="name">Full Name</label>
@@ -26,9 +26,10 @@
                 <label for="food">Select Item</label>
                 <select id="food" name="food" required>
                 <?php
+                // PHP Array and Loop to generate HTML options
                 $menu = [
                     "Hummus & Pita","Beef Samosas","Hot Wings","Fattouche Salad","Grilled Calamari",
-                    "Ribeye Steak","Fillet Steak","Lamb Chops","Mbuzi Kauka","Pork Ribs",
+                    "Ribeye Steak","Fillet Steak","Lamb Chops","pasta","Pork Ribs", 
                     "Grilled Tilapia","Prawn Curry","Grilled Chicken","Mombasa Lobster",
                     "Neapolitan Pizza","Chicken Biryani","Chocolate Waffle","Grilled Pineapple",
                     "Passion Mocktail","Long Island"
@@ -65,6 +66,8 @@
         </form>
     </div>
 </div>
+
+<script src="JS/script.js"></script>
 
 </body>
 </html>
